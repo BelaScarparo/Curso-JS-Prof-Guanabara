@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polícia Federal</title>
+    <style>
+        body {
+            background-color: black;
+            font:  normal 20pt Arial;
+            color: blanchedalmond;
+        }
+        h1 {
+            text-align: center;
+        }
+        div {
+           text-align: center;
+         
+        }
+        
+    </style>
+</head>
+<body>
+    <h1>Passaporte</h1>
+    <div class="PF">
+        <img src="./img/PF.jpg" alt="LOGO">
+    </div>
+    <p></p>
+    Qual pais você nasceu? <input type="text" name="nacionalidade" id="nacionalidade">
+    <input type="button" value="Verificar" onclick="calcular()">
+    <div id="res">
+
+    </div>
+<script>
+        function calcular() {
+            var pais = window.document.querySelector('input#nacionalidade')
+            var res = window.document.querySelector('div#res')
+            var PN = String(pais.value)
+            res.innerHTML = `<p>Você nasceu no pais ${PN}</p>`
+
+            if (PN != "Brasil"){
+                res.innerHTML += `Você é estrangeiro`
+            }else {
+                res.innerHTML += 'Você é Brasileiro'
+            }
+        }
+
+</script>
+
+</body>
+</html>
